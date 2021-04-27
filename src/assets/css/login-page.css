@@ -1,0 +1,64 @@
+body {
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-form-body {
+  height: 400px;
+  position: relative;
+}
+
+.login-form-body-register {
+  height: 600px;
+  position: relative;
+}
+
+.login-form-header {
+  height: 100px;
+  position: absolute;
+  top: -10%;
+  right: 36%;
+  z-index: 99;
+  width: 28%;
+  background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+}
+
+.login-label {
+  margin-top: 16px;
+}
+
+.google-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-content {
+  margin-top: 15%;
+}
+
+.register-container {
+  margin-top: 8%;
+}
+
+.login-container {
+  margin-top: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-form-header {
+    height: 120px;
+    position: absolute;
+    top: -12%;
+    right: 10%;
+    z-index: 99;
+    width: 80%;
+    background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+  }
+
+  .row-bg {
+    margin-top: 25%;
+  }
+}
