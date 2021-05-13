@@ -1,4 +1,4 @@
-const HOST = "";
+const HOST = "http://localhost:9090";
 import { app } from "./app";
 
 import { Loading } from "element-ui";

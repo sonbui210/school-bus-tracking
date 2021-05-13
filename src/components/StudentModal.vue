@@ -17,9 +17,21 @@
         <el-form-item label="Niên khoá: ">
           <el-input v-model="student.schoolYear" autocomplete="off"></el-input>
         </el-form-item>
+        <el-form-item label="SĐT: ">
+          <el-input v-model="student.phoneNumber" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="Email: ">
+          <el-input v-model="student.emailStudent" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="SĐT phụ huynh: ">
+          <el-input v-model="student.phoneNumberGrand" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="Email phụ huynh: ">
+          <el-input v-model="student.emailGrand" autocomplete="off"></el-input>
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button type="danger" @click="busDialogVisible = false">Huỷ</el-button>
+        <el-button type="danger" @click="studentModalVisible = false">Huỷ</el-button>
         <el-button type="primary" @click="addNewStudent()">Thêm</el-button>
       </span>
     </el-dialog>

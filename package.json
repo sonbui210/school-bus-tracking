@@ -9,8 +9,14 @@
   },
   "dependencies": {
     "@stomp/stompjs": "^6.0.0",
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
     "element-ui": "^2.14.1",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
     "sockjs-client": "^1.5.0",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9"
@@ -18,7 +24,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-service": "^4.5.13",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
@@ -42,5 +48,17 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonbui210/school-bus-tracking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonbui210/school-bus-tracking/issues"
+  },
+  "homepage": "https://github.com/sonbui210/school-bus-tracking#readme"
 }

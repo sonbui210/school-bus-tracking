@@ -23,7 +23,7 @@
       </el-menu-item>
       <el-menu-item index="/log">
         <i class="el-icon-tickets"></i>
-        <span slot="title">Theo dõi lên xuống xe</span>
+        <span slot="title">Theo dõi học sinh</span>
       </el-menu-item>
 
       <el-menu-item @click="logout">
