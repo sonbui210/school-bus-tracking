@@ -1,4 +1,4 @@
-const HOST = "http://localhost:9090";
+const HOST = "https://dataschoolbus.herokuapp.com";
 import { app } from "./app";
 
 import { Loading } from "element-ui";
