@@ -107,7 +107,7 @@ export default {
     async searchOriginal(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
       if (result.data.status == "OK") {
-        this.originalPlaceList = result.items.address.label.map((p) => {
+        this.originalPlaceList = result.items.title.map((p) => {
           return {
             name: p.formatted_address,
             location: p.geometry.location,
@@ -120,7 +120,7 @@ export default {
     async searchDestination(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
       if (result.data.status == "OK") {
-        this.destinationPlaceList = result.items.address.label.map((p) => {
+        this.destinationPlaceList = result.items.title.map((p) => {
           return {
             name: p.formatted_address,
             location: p.geometry.location,
@@ -133,7 +133,7 @@ export default {
     async searchWayPoint(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
       if (result.data.status == "OK") {
-        this.wayPointList = result.data.results.map((p) => {
+        this.wayPointList = result.items.title.map((p) => {
           return {
             name: p.formatted_address,
             location: p.geometry.location,
