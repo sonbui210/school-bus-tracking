@@ -111,7 +111,7 @@ export default {
           return {
             name: p.address.label,
             location: p.position,
-            icon: p.localityType,
+            icon: p.resultType,
             id: p.id,
           };
         });
@@ -124,7 +124,7 @@ export default {
           return {
             name: p.address.label,
             location: p.position,
-            icon: p.localityType,
+            icon: p.resultType,
             id: p.id,
           };
         });
@@ -137,7 +137,7 @@ export default {
           return {
             name: p.address.label,
             location: p.position,
-            icon: p.localityType,
+            icon: p.resultType,
             id: p.id,
           };
         });
