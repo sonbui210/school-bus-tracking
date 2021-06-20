@@ -119,10 +119,10 @@ export default {
     },
     async searchDestination(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
-      if (result.response.status == "200") {
+      if (result) {
         this.destinationPlaceList = result.items.map((p) => {
           return {
-            name: p.address.label,
+            name: p.title,
             location: p.position,
             icon: p.localityType,
             id: p.id,
