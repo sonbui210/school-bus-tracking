@@ -107,7 +107,7 @@ export default {
     async searchOriginal(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
       if (result.data.status == "OK") {
-        this.originalPlaceList = result.items.title.map((p) => {
+        this.originalPlaceList = result.items.map((p) => {
           return {
             name: p.formatted_address,
             location: p.geometry.location,
@@ -119,13 +119,13 @@ export default {
     },
     async searchDestination(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
-      if (result.data.status == "OK") {
-        this.destinationPlaceList = result.items.title.map((p) => {
+      if (result.response.status == "200") {
+        this.destinationPlaceList = result.items.map((p) => {
           return {
-            name: p.formatted_address,
-            location: p.geometry.location,
-            icon: p.icon,
-            id: p.place_id,
+            name: p.address.label,
+            location: p.position,
+            icon: p.localityType,
+            id: p.id,
           };
         });
       }
