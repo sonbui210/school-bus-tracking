@@ -119,7 +119,7 @@ export default {
     },
     async searchDestination(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
-      if (result) {
+      //if (result) {
         this.destinationPlaceList = result.items.map((p) => {
           return {
             name: p.title,
@@ -128,7 +128,7 @@ export default {
             id: p.id,
           };
         });
-      }
+      //}
     },
     async searchWayPoint(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
