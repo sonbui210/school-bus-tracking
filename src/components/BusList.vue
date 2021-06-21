@@ -47,13 +47,17 @@ export default {
     },
     getBusOriginalPlace(bus) {
       let route = JSON.parse(bus.route);
-      let original = route.original;
-      return original.name.split(",")[0];
+      //let original = route.original;
+      //return original.name.split(",")[0];
+      //let originalBus = route.substring(route.search("\"name\":\""),route.search(","));
+      return route[0];
     },
     getBusDestinationPlace(bus) {
       let route = JSON.parse(bus.route);
-      let destination = route.destination;
-      return destination.name.split(",")[0];
+      //let destination = route.destination;
+      //return destination.name.split(",")[0];
+      //let destinationBus = route.substring(route.search("\"name\":\""),route.search(","));
+      return route[0];
     },
     async searchBus() {
       if (this.searchKey) {
