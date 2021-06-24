@@ -13,9 +13,9 @@
             <img src="/images/bus.jpg" width="200px" height="200px" class="image" style="margin-top: 16px;" />
             <div style="padding: 14px;">
               <span>{{ getBusOriginalPlace(bus) }} - {{ getBusDestinationPlace(bus) }}</span>
-              <div style="position: absolute; bottom: 0; left: 35%;">
+              <div style="position: absolute; bottom: 0; left: 43%;">
                 <time class="time">{{ bus.licensePlate }}</time> <br />
-                <el-button type="text" class="button" @click="selectBus(bus)">Xem bản đồ</el-button>
+                <el-button type="text" class="button" @click="selectBus(bus)"></el-button>
               </div>
             </div>
           </el-card>
@@ -47,17 +47,22 @@ export default {
     },
     getBusOriginalPlace(bus) {
       let route = JSON.parse(bus.route);
+      //let catbo1 = route.slice(5,10);
       //let original = route.original;
       //return original.name.split(",")[0];
       //let originalBus = route.substring(route.search("\"name\":\""),route.search(","));
-      return route[0];
+      //return route[0];
+      let original = route.original.name;
+      return original;
     },
     getBusDestinationPlace(bus) {
       let route = JSON.parse(bus.route);
+      //let catbo2 = route.slice(5,10);
       //let destination = route.destination;
       //return destination.name.split(",")[0];
       //let destinationBus = route.substring(route.search("\"name\":\""),route.search(","));
-      return route[0];
+      let destination = route.destination.name;
+      return destination;
     },
     async searchBus() {
       if (this.searchKey) {
