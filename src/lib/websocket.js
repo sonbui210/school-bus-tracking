@@ -8,7 +8,7 @@ const connect = function(callback) {
   connecting = true;
   //FOR_RELEASE
   const client = new StompJs.Client({
-    brokerURL: "ws://157.245.53.161:9090/websocket",
+    brokerURL: "ws://dataschoolbus.herokuapp.com/websocket",
     debug: function(str) {
       console.log(str);
     },
@@ -25,7 +25,7 @@ const connect = function(callback) {
   // if (typeof WebSocket !== "function") {
   client.webSocketFactory = function() {
     // Note that the URL is different from the WebSocket URL
-    return new SockJS("http://157.245.53.161:9090/websocket");
+    return new SockJS("http://dataschoolbus.herokuapp.com/websocket");
   };
   // }
 
