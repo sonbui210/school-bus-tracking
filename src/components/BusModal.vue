@@ -106,39 +106,39 @@ export default {
     },
     async searchOriginal(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
-      if (result.status == "success") {
-        this.originalPlaceList = result.data.items.map((p) => {
+      if (result.data.status == "OK") {
+        this.originalPlaceList = result.data.results.map((p) => {
           return {
-            name: p.address.label,
-            location: p.position,
-            icon: p.resultType,
-            id: p.id,
+            name: p.formatted_address,
+            location: p.geometry.location,
+            icon: p.icon,
+            id: p.place_id,
           };
         });
       }
     },
     async searchDestination(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
-      if (result.status == "success") {
+      if (result.status == "OK") {
         this.destinationPlaceList = result.data.items.map((p) => {
           return {
-            name: p.address.label,
-            location: p.position,
-            icon: p.resultType,
-            id: p.id,
+            name: p.formatted_address,
+            location: p.geometry.location,
+            icon: p.icon,
+            id: p.place_id,
           };
         });
       }
     },
     async searchWayPoint(query) {
       let result = await api.call("GET", "/api/bus/searchPlace?query=" + query);
-      if (result.status == "success") {
+      if (result.status == "OK") {
         this.wayPointList = result.data.items.map((p) => {
           return {
-            name: p.address.label,
-            location: p.position,
-            icon: p.resultType,
-            id: p.id,
+            name: p.formatted_address,
+            location: p.geometry.location,
+            icon: p.icon,
+            id: p.place_id,
           };
         });
       }
