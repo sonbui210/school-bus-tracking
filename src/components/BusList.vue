@@ -15,7 +15,7 @@
               <span>{{ getBusOriginalPlace(bus) }} - {{ getBusDestinationPlace(bus) }}</span>
               <div style="position: absolute; bottom: 0; left: 43%;">
                 <time class="time">{{ bus.licensePlate }}</time> <br />
-                <el-button type="text" class="button" @click="selectBus(bus)"></el-button>
+                <el-button type="text" class="button" @click="selectBus(bus)">Xem bản đồ</el-button>
               </div>
             </div>
           </el-card>
