@@ -22,7 +22,7 @@
       </el-table-column>
       <el-table-column label="Hình ảnh">
         <template slot-scope="scope">
-          <el-image style="width: 100px; height: 100px" :src="'http://157.245.53.161:9090/api/files/downloadFile/' + scope.row.image"></el-image>
+          <el-image style="width: 100px; height: 100px" :src="'https://dataschoolbus.herokuapp.com/api/files/downloadFile/' + scope.row.image"></el-image>
         </template>
       </el-table-column>
     </el-table>
