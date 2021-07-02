@@ -25,7 +25,7 @@ const connect = function(callback) {
   // if (typeof WebSocket !== "function") {
   client.webSocketFactory = function() {
     // Note that the URL is different from the WebSocket URL
-    return new SockJS("https://dataschoolbus.herokuapp.com/websocket");
+    return new SockJS("http://dataschoolbus.herokuapp.com/websocket");
   };
   // }
 
