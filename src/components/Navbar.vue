@@ -13,7 +13,7 @@
         <i class="el-icon-user-solid"></i>
         <span slot="title">Quản lý học sinh</span>
       </el-menu-item>
-      <el-menu-item v-if="busRoles[0].authority === 'ADMIN'" index="/user">
+      <el-menu-item v-if="roless === 'ADMIN'" index="/user">
         <i class="el-icon-user"></i>
         <span slot="title">Quản lý người dùng</span>
       </el-menu-item>
@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       busRoles: [],
+      roless: "",
     };
   },
   methods: {
@@ -56,8 +57,8 @@ export default {
             authority: b.authority,
           }
         });
-        
-      }
+        this.roless = this.busRoles[0].authority
+      } else {this.roless = "null"}
     },
     logout() {
       setLocal({

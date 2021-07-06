@@ -9,7 +9,7 @@
     <StudentModal @studentUpdated="updateStudentList" ref="studentModal" :title="studentModalTitle" />
     <div style="width: 100%;  padding-top: 16px;">
       <h3 style="float: left">Danh sách học sinh</h3>
-      <el-button v-if="busRoles[0].authority === 'ADMIN'" icon="el-icon-circle-plus" style="float: right; margin: 16px 0" type="primary" @click="addOrEditStudent('add', {})">Thêm mới</el-button>
+      <el-button v-if="roless === 'ADMIN'" icon="el-icon-circle-plus" style="float: right; margin: 16px 0" type="primary" @click="addOrEditStudent('add', {})">Thêm mới</el-button>
     </div>
 
     <el-table ref="singleTable" :data="students" highlight-current-row style="width: 100%">
@@ -25,7 +25,7 @@
       <el-table-column property="className" label="Lớp"> </el-table-column>
       <el-table-column property="address" label="Địa chỉ"> </el-table-column>
       <el-table-column property="schoolYear" label="Niên khoá"> </el-table-column>
-      <el-table-column v-if="busRoles[0].authority === 'ADMIN'" fixed="right" label="Operations" width="240">
+      <el-table-column v-if="roless === 'ADMIN'" fixed="right" label="Operations" width="240">
         <template slot-scope="scope">
           <el-button icon="el-icon-edit" @click="addOrEditStudent('edit', scope.row)" type="button" size="small">Chỉnh sửa</el-button>
           <el-button icon="el-icon-delete" type="button" size="small">Xoá</el-button>
@@ -48,6 +48,7 @@ export default {
       studentModalTitle: "Thêm mới học sinh",
       searchKey: "",
       busRoles: [],
+      roless: "",
     };
   },
   methods: {
@@ -97,8 +98,8 @@ export default {
             authority: b.authority,
           }
         });
-        
-      }
+        this.roless = this.busRoles[0].authority
+      } else {this.roless = "null"}
     },
   },
   beforeMount() {

@@ -4,7 +4,7 @@
 
     <div style="width: 100%;">
       <h4 style="float: left">Danh sách xe Bus</h4>
-      <el-button v-if="busRoles[0].authority === 'ADMIN'" type="primary" style="float: right" icon="el-icon-circle-plus" @click="addOrEditBus('add', newBus)">Thêm xe bus</el-button>
+      <el-button v-if="roless === 'ADMIN'" type="primary" style="float: right" icon="el-icon-circle-plus" @click="addOrEditBus('add', newBus)">Thêm xe bus</el-button>
     </div>
 
     <el-table :data="busList" style="width: 100%" height="500">
@@ -19,7 +19,7 @@
       <el-table-column prop="status" label="Trạng thái" width="130"> </el-table-column>
       <el-table-column prop="driver" label="Tài xế" width="180"> </el-table-column>
       <el-table-column prop="phone" label="Điện thoại liên hệ" width="200" align="center"> </el-table-column>
-      <el-table-column v-if="busRoles[0].authority === 'ADMIN'" fixed="right" label="Thao tác" width="120">
+      <el-table-column v-if="roless === 'ADMIN'" fixed="right" label="Thao tác" width="120">
         <template slot-scope="scope">
           <el-button type="text" size="small" @click="addOrEditBus('edit', scope.row)">Sửa</el-button>
           <el-button type="text" size="small" @click="deleteBus(scope.row)">Xoá</el-button>
@@ -39,6 +39,7 @@ export default {
   data() {
     return {
       busRoles: [],
+      roless: "",
       busList: [],
       busModalTitle: "Thêm mới xe Bus",
       newBus: {
@@ -60,9 +61,10 @@ export default {
           return{
             authority: b.authority,
           }
-        });
+        });  
+        this.roless = this.busRoles[0].authority
+      } else {this.roless = "null"}
         
-      }
     },
     addOrEditBus(type, bus) {
       if (type == "add") {
