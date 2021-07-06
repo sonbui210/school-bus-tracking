@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <el-menu default-active="1" :collapse="isMobile()" style="text-align: left; height: 99vh; " class="el-menu-vertical-demo" router>
+  <div> 
+    <el-menu default-active="1" :collapse="isMobile()" style="text-align: left; height: 100%; " class="el-menu-vertical-demo" router>
+      <div style="margin-top: 20px; background-color: #ECF5FF ">
+      <span style=" margin-left: 12%;"> User: {{userr}}<br></span>
+      <span style=" margin-left: 12%;"> Role: {{roless}}</span>
+      </div>
       <el-menu-item index="/">
         <i class="el-icon-menu"></i>
         <span slot="title">Danh sách xe bus</span>
@@ -29,9 +33,8 @@
         <i class="el-icon-switch-button"></i>
         <span slot="title">Đăng xuất</span>
       </el-menu-item>
-      
-       
     </el-menu>
+    
   </div>
 
 </template>
@@ -46,12 +49,14 @@ export default {
     return {
       busRoles: [],
       roless: "",
+      userr: ""
     };
   },
   methods: {
     async fetchRolse() {
       let res = await api.call("GET", "/api/auth/me", null);
       if (res.data) {
+        this.userr = res.data.username;
         this.busRoles = res.data.roles.map((b) =>{
           return{
             authority: b.authority,
