@@ -10,17 +10,16 @@
       <el-table-column prop="username" label="Tên đăng nhập"> </el-table-column>
       <el-table-column prop="email" label="Email"> </el-table-column>
       <el-table-column prop="phone" label="Số điện thoại"> </el-table-column>
-      <el-table-column prop="roles.0.code" label="Role">
-      </el-table-column>
+      <el-table-column prop="roles.0.code" label="Role"></el-table-column>
       <el-table-column fixed="right" label="Operations" width="240">
         <template slot-scope="scope">
-          <el-button @click="updateUserInfo('edit', scope.row)" type="button" size="small">Lưu</el-button>
+          <el-button @click="editUser()" type="button" size="small">Chỉnh sửa</el-button>
         </template>
       </el-table-column>
     </el-table>
-    
   </div>
 </template>
+
 
 <script>
 import { api } from "../lib/api";
