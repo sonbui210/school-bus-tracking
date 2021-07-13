@@ -8,14 +8,15 @@
       </el-col>
     </el-row>
 
-    <div style="margin-top: 0px; width: 100%; height: 100%; backgroundColor: #FFFFFA">
-        <div style="margin-top: 20px; width: 40%; float:left">
-            <img src="/images/bus.jpg" alt="Norway" style="width:200px;border-radius: 20px;">
+    <div style="margin-top: 0px; width: 100%; height: 100%; backgroundColor: #FFFFFB">
+        <div style="margin-top: 20px; width: 20%; float:left">
+            <el-image style="width:150px;height: 200px; border-radius: 20px; border: 5px solid #555;" :src="'https://dataschoolbus.herokuapp.com/api/files/downloadFile/' + studentinfo.avatar"></el-image>
+        <!--    <img src="/images/sonbui.jpg" alt="Avatar" style="width:200px;border-radius: 20px;">  -->
         </div>
 
-        <div style="margin-top: 20px; width: 60%; float:right">
+        <div style="margin-top: 20px; width: 80%; float:right">
             <div>
-                <div style="width: 50%; float:left">
+                <div style="width: 30%; float:left">
                     <p style=" text-align:left;">ID học sinh       :  {{studentinfo.id}}</p>
                     <p style=" text-align:left;">Họ và tên         :  {{studentinfo.fullName}}</p>
                     <p style=" text-align:left;">Địa chỉ           :  {{studentinfo.address}}</p>
