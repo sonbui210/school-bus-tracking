@@ -18,7 +18,7 @@
       <el-table-column property="fullName" label="Họ tên" width="250"> </el-table-column>
       <el-table-column property="status" label="Trạng thái" width="150">
         <template slot-scope="scope">
-          <el-tag v-if="scope.row.status == 'ON_BUS'" type="success">Đang trên xe {{ scope.row.bus != null ? scope.row.bus.code : "Unknow" }}</el-tag>
+          <el-tag v-if="scope.row.status == 'ON_BUS'" type="success">Đang trên xe {{ scope.row != null ? scope.row.busCodeGet : "Unknow" }}</el-tag>
           <el-tag v-else type="danger">Chưa lên xe</el-tag>
         </template>
       </el-table-column>

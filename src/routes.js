@@ -7,6 +7,7 @@ import BusManagement from "./components/BusManagement";
 import Register from "./Register";
 import Account from "./views/Account";
 import TrackingLog from "./components/TrackingLog";
+import StudentInfo from "./components/StudentInfo"
 import User from "./views/User";
 
 Vue.use(VueRouter);
@@ -42,6 +43,10 @@ export const router = new VueRouter({
     {
       path: "/log",
       component: TrackingLog,
+    },
+    {
+      path: "/studentinfo",
+      component: StudentInfo,
     },
     {
       path: "/user",

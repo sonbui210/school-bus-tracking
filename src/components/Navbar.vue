@@ -5,6 +5,10 @@
       <span style=" margin-left: 12%;"> User: {{userr}}<br></span>
       <span style=" margin-left: 12%;"> Role: {{roless}}</span>
       </div>
+       <el-menu-item v-if="roless === 'PHUHUYNH'" index="/studentinfo">
+        <i class="el-icon-s-custom"></i>
+        <span slot="title">Thông tin học sinh</span>
+      </el-menu-item>
       <el-menu-item index="/">
         <i class="el-icon-menu"></i>
         <span slot="title">Danh sách xe bus</span>

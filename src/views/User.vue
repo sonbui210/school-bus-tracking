@@ -11,10 +11,12 @@
       <el-table-column prop="email" label="Email"> </el-table-column>
       <el-table-column prop="phone" label="Số điện thoại"> </el-table-column>
       <el-table-column prop="roles.0.code" label="Role"></el-table-column>
+
+      <!--
       <el-table-column fixed="right" label="Operations" width="240">
         <template slot-scope="">
           <el-button @click="editUser()" type="button" size="small">Chỉnh sửa</el-button>
-        </template>
+        </template> -->
       </el-table-column>
     </el-table>
   </div>

@@ -20,11 +20,13 @@
           <el-tag v-if="scope.row.status == 0" style="width: 80px; text-align: center;" type="danger">Xuống xe</el-tag>
         </template>
       </el-table-column>
+<!--
       <el-table-column label="Hình ảnh">
         <template slot-scope="scope">
           <el-image style="width: 100px; height: 100px" :src="'https://dataschoolbus.herokuapp.com/api/files/downloadFile/' + scope.row.image"></el-image>
         </template>
       </el-table-column>
+-->
     </el-table>
     <el-pagination
       style="margin-top: 16px; margin-bottom: 16px;"
