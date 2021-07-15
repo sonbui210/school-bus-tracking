@@ -10,7 +10,7 @@
 
     <div style="margin-top: 0px; width: 100%; height: 100%; backgroundColor: #FFFFFB">
         <div style="margin-top: 20px; width: 20%; float:left">
-            <el-image style="width:150px;height: 200px; border-radius: 20px; border: 5px solid #555;" :src="'https://dataschoolbus.herokuapp.com/api/files/downloadFile/' + studentinfo.avatar"></el-image>
+            <el-image style="width:150px;height: 200px; border-radius: 20px; border: 5px solid #555;" :src="'https://dataschoolbus.herokuapp.com/api/files/downloadFile/'+studentinfo.avatar"></el-image>
         <!--    <img src="/images/sonbui.jpg" alt="Avatar" style="width:200px;border-radius: 20px;">  -->
         </div>
 

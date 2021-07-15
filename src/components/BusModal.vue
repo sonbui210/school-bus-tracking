@@ -11,11 +11,13 @@
         <el-form-item label="Điểm đón">
           <el-select ref="originalSearchMachine" style="width: 100%;" v-model="original" filterable clearable remote reserve-keyword placeholder="Gõ để tìm kiếm" :remote-method="searchOriginal">
             <el-option v-for="(item, index) in originalPlaceList" :key="index" :label="item.name" :value="item"> </el-option>
+            <el-input v-model="bus.original1" autocomplete="off"></el-input>
           </el-select>
         </el-form-item>
         <el-form-item label="Điểm dừng">
           <el-select ref="destinationSearchMachine" style="width: 100%;" v-model="destination" filterable clearable remote reserve-keyword placeholder="Gõ để tìm kiếm" :remote-method="searchDestination">
             <el-option v-for="(item, index) in destinationPlaceList" :key="index" :label="item.name" :value="item"> </el-option>
+            <el-input v-model="bus.destination1" autocomplete="off"></el-input>
           </el-select>
         </el-form-item>
         <el-form-item>
@@ -84,6 +86,8 @@ export default {
         id: 0,
         licensePlate: "",
         route: {},
+        original1: "",
+        destination1: "",
         code: "",
         driver: "",
         phone: "",
@@ -145,6 +149,8 @@ export default {
     },
     async addNewBus() {
       this.bus.route = { original: this.original, destination: this.destination };
+      this.bus.original1 = this.original;
+      this.bus.destination1 = this.destination;
       this.bus.waypoint = this.bus.waypoint.map((wp) => JSON.stringify(wp));
 
       let response = await api.call("POST", "/api/bus/addNewBus", this.bus);
@@ -154,6 +160,8 @@ export default {
           id: 0,
           licensePlate: "",
           route: {},
+          original1: "",
+          destination1: "",
           code: "",
           driver: "",
           phone: "",
