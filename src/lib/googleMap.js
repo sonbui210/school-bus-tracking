@@ -4,11 +4,7 @@ import { app } from "./app";
 var initMap = function() {
   // Create the script tag, set the appropriate attributes
   var script = document.createElement("script");
-<<<<<<< HEAD
   script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcOTKf-NgKbblRzqwNgJeJVHFFgouODG4&region=VN&language=vn&callback=initMap";
-=======
-  script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBrcR2vZWMc8Pcu6DYUjLqdn3B6LuveK5U&region=VN&language=vn&callback=initMap";
->>>>>>> 878f8adcb0fbcb74d4e0e78f418bfd2dfb03fb54
   script.defer = true;
 
   // Attach your callback function to the `window` object
